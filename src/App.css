@@ -126,6 +126,10 @@ input[type="number"] {
   background-color: #f3fafc;
 }
 
+.event:hover {
+  border: 5px solid #008000;
+}
+
 .details-btn {
   position: absolute;
   right: 5px;
