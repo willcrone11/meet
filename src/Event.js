@@ -70,9 +70,10 @@ class Event extends Component {
           <span className='location'>{event.location}</span>
         </div>
         <div>{this.renderExpandedComponent()}</div>
+        <br/>
         <button 
         type='button' 
-        className='btn-details'
+        className='details-btn'
         onClick={this.handleExpandEvent}
         >
           {this.renderButtonText()}
