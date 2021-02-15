@@ -46,6 +46,7 @@
 
 #city-label, #numevents-label {
   font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 ul {
@@ -123,7 +124,8 @@ input[type="number"] {
   border: 1px solid rgb(12, 11, 11);
   border-radius: 4px;
   position: relative;
-  background-color: #f3fafc;
+  background-color: #fafcf9;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .event:hover {
@@ -140,6 +142,7 @@ input[type="number"] {
   cursor: pointer;
   background-color: #fcedce;
   font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .name {
