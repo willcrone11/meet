@@ -61,7 +61,7 @@ class Event extends Component {
     const { event } = this.props;
     
     return (
-      <div className='event'>
+      <div className='event' onClick={this.handleExpandEvent}>
         <div className='heading'>
           <h2 className='summary'>{event.summary}</h2>
         </div>
