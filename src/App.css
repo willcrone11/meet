@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-image: linear-gradient(to right, #dcf3fa , #bff3ea);
+  background-image: linear-gradient(to right, #7781f5 , #89f7e4);
 }
 
 .App * {
@@ -20,8 +20,19 @@
 
 #header {
   font-size: 60px;
-  
-  color: #080808;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#devel {
+  color: blue;
+}
+
+#plus {
+  color: green;
+}
+
+#up {
+  color: orange;
 }
 
 #webdev-header {
