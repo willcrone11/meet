@@ -1,11 +1,40 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@500&family=Josefin+Sans&display=swap');
 .App {
   text-align: center;
   padding: 2% 5%;
+  background-image: linear-gradient(to right, #dcf3fa , #bff3ea);
 }
 
 .App * {
   box-sizing: border-box;
+}
+
+#header-container {
+  background-color: #f3fafc;
+  padding: 15px;
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
+  max-width: 1000px;
+  display: inline-block;
+}
+
+#header {
+  font-size: 60px;
+  
+  color: #080808;
+}
+
+#webdev-header {
+  font-weight: bolder;
+  color: #e78c23;
+}
+
+#subheader {
+  font-style: italic;
+}
+
+#city-label, #numevents-label {
+  font-weight: bold;
 }
 
 ul {
@@ -80,9 +109,10 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(12, 11, 11);
   border-radius: 4px;
   position: relative;
+  background-color: #f8f7f2;
 }
 
 .details-btn {
@@ -93,6 +123,8 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  background-color: #fcedce;
+  font-weight: bold;
 }
 
 .name {
