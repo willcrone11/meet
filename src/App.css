@@ -1,19 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@500&family=Josefin+Sans&display=swap');
+
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-image: linear-gradient(to right, #7781f5 , #89f7e4);
+  background-image: radial-gradient(circle, #bef3a9 , #88f796, #3d4d3d);
 }
 
 .App * {
   box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #header-container {
   background-color: #f3fafc;
-  padding: 15px;
+  padding: 40px;
   border-top-left-radius: 25%;
   border-top-right-radius: 25%;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
   max-width: 1000px;
   display: inline-block;
 }
@@ -24,15 +27,15 @@
 }
 
 #devel {
-  color: blue;
+  color: #101011;
 }
 
 #plus {
-  color: green;
+  color: #0f7c40;
 }
 
 #up {
-  color: orange;
+  color: #ecb54d;
 }
 
 #webdev-header {
@@ -122,14 +125,14 @@ input[type="number"] {
   margin-bottom: 10px;
   text-align: left;
   border: 1px solid rgb(12, 11, 11);
-  border-radius: 4px;
+  border-radius: 15px;
   position: relative;
   background-color: #fafcf9;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .event:hover {
-  border: 5px solid #008000;
+  border: 5px solid #141414;
 }
 
 .details-btn {
@@ -137,10 +140,10 @@ input[type="number"] {
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
-  border-radius: 4px;
+  border-radius: 10px;
   outline: none;
   cursor: pointer;
-  background-color: #fcedce;
+  background-color: #fae4a7;
   font-weight: bold;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
