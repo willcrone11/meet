@@ -132,12 +132,16 @@ input[type="number"] {
   border: 2px solid #141414;
 }
 
+.location-container {
+  margin-bottom: 10px;
+}
+
 .details-btn {
   position: absolute;
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
-  margin: 5px;
+  margin: 3px;
   border-radius: 10px;
   outline: none;
   cursor: pointer;
