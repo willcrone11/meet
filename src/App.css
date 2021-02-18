@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-image: linear-gradient(to right, #4bdfad , #f0f8f1, #4bdfad);
+  background-image: linear-gradient(to right, #7ab6ee , #f8faf4, #7ab6ee);
 }
 
 .App * {
@@ -31,7 +31,7 @@
 }
 
 #plus {
-  color: #0f7c40;
+  color: #72aff5;
 }
 
 #up {
