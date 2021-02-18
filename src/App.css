@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-image: linear-gradient(to right, #4bdfad , #9afda7, #4bdfad);
+  background-image: linear-gradient(to right, #4bdfad , #f0f8f1, #4bdfad);
 }
 
 .App * {
