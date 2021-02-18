@@ -62,8 +62,9 @@ class App extends Component {
       <div className="App">
         <div id="header-container">
           <h1 id="header"><span id="devel">devel_</span><span id="up">Up</span><span id="plus">+</span></h1>
-          <p id="subheader">Want to level-up your dev skills?<br/><br/>Explore upcoming events in <span id="webdev-header">Web Development</span> from around the world!</p>
         </div>
+        <br></br><br></br>
+          <p id="subheader">Want to level-up your dev skills?<br/><br/>Explore upcoming events in <span id="webdev-header">Web Development</span> from around the world!</p>
         <br/><br/>
         <label id="city-label">Select your city: </label>
         <br/><br/>

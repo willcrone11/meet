@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-image: linear-gradient(to right, #c2e5f5 , #9aa2e7);
+  background-image: linear-gradient(to right, #c2e5f5 , #b3b9f3);
 }
 
 .App * {
@@ -11,14 +11,11 @@
 }
 
 #header-container {
-  background-color: #f3fafc;
-  padding: 10px;
-  border-top-left-radius: 25%;
-  border-top-right-radius: 25%;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
-  max-width: 1000px;
+  background-color: white;
+  border-radius: 10%;
+  max-width: 400px;
   display: inline-block;
+  padding: 10px;
 }
 
 #header {
@@ -31,16 +28,16 @@
 }
 
 #plus {
-  color: #e78c23;
+  color: #070607;
 }
 
 #up {
-  color: #a030eb;
+  color: #fd7506;
 }
 
 #webdev-header {
   font-weight: bolder;
-  color: #e78c23;
+  color:  #df720c;;
 }
 
 #subheader {
@@ -121,18 +118,18 @@ input[type="number"] {
 }
 
 .event {
-  padding: 10px 10px 35px;
+  padding-top: 1px;
+  padding-left: 20px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid rgb(12, 11, 11);
   border-radius: 15px;
   position: relative;
-  background-color: #fafcf9;
+  background-color: #fcfbf6;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .event:hover {
-  border: 5px solid #141414;
+  border: 2px solid #141414;
 }
 
 .details-btn {
