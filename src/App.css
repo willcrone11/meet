@@ -2,7 +2,6 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-image: linear-gradient(to right, #c2e5f5 , #b3b9f3);
 }
 
 .App * {
@@ -16,6 +15,7 @@
   max-width: 400px;
   display: inline-block;
   padding: 10px;
+  border: 1px solid black;
 }
 
 #header {
@@ -24,20 +24,20 @@
 }
 
 #devel {
-  color: #101011;
+  color: #0d0d0e;
 }
 
 #plus {
-  color: #070607;
+  color: #17aa2b;
 }
 
 #up {
-  color: #fd7506;
+  color: #25b138;
 }
 
 #webdev-header {
   font-weight: bolder;
-  color:  #df720c;;
+  color:  #25b138;
 }
 
 #subheader {
@@ -70,7 +70,7 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 2px solid #070707;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -124,7 +124,7 @@ input[type="number"] {
   text-align: left;
   border-radius: 15px;
   position: relative;
-  background-color: #fcfbf6;
+  background-color: #cafacd;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -140,7 +140,7 @@ input[type="number"] {
   border-radius: 10px;
   outline: none;
   cursor: pointer;
-  background-color: #fae4a7;
+  background-color: #fafafa;
   font-weight: bold;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -248,8 +248,6 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-
-
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
     flex-direction: row;
@@ -260,4 +258,66 @@ input[type="number"] {
     min-width: auto;
     margin: 0 auto;
   }
+}
+
+/* handles background animation */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles for background*/
+body {
+  background-image: linear-gradient(to right, #fcf3e0,#fae0a9,#f7cb6d, #f7dea9, #fcf3e0);
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
