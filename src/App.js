@@ -5,6 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 import "./nprogress.css";
+import { ErrorAlert } from './Alert';
 
 class App extends Component {
 
@@ -44,6 +45,18 @@ class App extends Component {
     }
   }
 
+  ifOnline = () => {
+    if (!navigator.onLine) {
+      this.setState({
+        infoText: 'You are offline- currently only showing cached events'
+      })
+    } else {
+      return this.setState({
+        infoText: '',
+      })
+    }
+  }
+
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
@@ -51,6 +64,7 @@ class App extends Component {
         this.setState({ events, locations: extractLocations(events) });
       }
     });
+    this.ifOnline();
   }
 
   componentWillUnmount(){
@@ -62,6 +76,7 @@ class App extends Component {
       <div className="App">
         <div id="header-container">
           <h1 id="header"><span id="devel">devel_</span><span id="up">Up</span><span id="plus">+</span></h1>
+          <p className="error-alert-offline" ><ErrorAlert text={this.state.infoText} /></p>
         </div>
         <br></br><br></br>
           <p id="subheader">Want to level-up your dev skills?<br/><br/>Explore upcoming events in <span id="webdev-header">Web Development</span> from around the world!</p>
@@ -79,7 +94,7 @@ class App extends Component {
           updateEvents={this.updateEvents}
         />
         <br></br>
-        <EventList events={this.state.events} />
+        <EventList events={this.state.events}/>
       </div>
     );
   }

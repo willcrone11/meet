@@ -102,6 +102,15 @@ input[type="number"] {
   text-align: center;
 }
 
+.error-alert-offline {
+  font-size: 14px;
+  display: inline-block;
+  align-items: center;
+  padding: none;
+  transform: translateY(-50px);
+  width: 200px;
+}
+
 .suggestions {
   width: 250px;
   position: absolute;
