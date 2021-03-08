@@ -66,12 +66,13 @@ class App extends Component {
         <br></br><br></br>
           <p id="subheader">Want to level-up your dev skills?<br/><br/>Explore upcoming events in <span id="webdev-header">Web Development</span> from around the world!</p>
         <br/><br/>
-        <label id="city-label">Select your city: </label>
-        <br/><br/><br/>
-        <CitySearch 
-          locations={this.state.locations} 
-          updateEvents={this.updateEvents} 
-        />
+        <label id="city-label">Select your city: 
+          <br/><br/><br/>
+          <CitySearch 
+            locations={this.state.locations} 
+            updateEvents={this.updateEvents} 
+          />
+        </label>
         <br/><br/>
         <NumberOfEvents 
           numberOfEvents={this.state.numberOfEvents}
