@@ -2,6 +2,41 @@ import { mockData } from './mock-data';
 import axios from 'axios';
 import NProgress from 'nprogress';
 
+export const getEvents = async () => {
+  NProgress.start();
+
+  //returns mock data on local host
+  if (window.location.href.startsWith("http://localhost")) {
+    NProgress.done();
+    return mockData;
+  }
+
+  //returns previously cached events when online 
+  if (!navigator.onLine) {
+    const events = localStorage.getItem("lastEvents");
+    NProgress.done();
+    return {
+      events: JSON.parse(events).events,
+      locations: extractLocations(JSON.parse(events).events),
+    };
+  }
+
+  const token = await getAccessToken();
+
+  if (token) {
+    removeQuery();
+    const url = 'https://embmwddg0m.execute-api.us-east-2.amazonaws.com/dev/api/get-events' + '/' + token;
+    const result = await axios.get(url);
+    if (result.data) {
+      var locations = extractLocations(result.data.events);
+      localStorage.setItem("lastEvents", JSON.stringify(result.data));
+      localStorage.setItem("locations", JSON.stringify(locations));
+    }
+    NProgress.done();
+    return result.data.events;
+  }
+};
+
 export const extractLocations = (events) => {
   var extractLocations = events.map((event) => event.location);
   var locations = [...new Set(extractLocations)];
@@ -45,38 +80,6 @@ const checkToken = async (accessToken) => {
     .catch((error) => error.json());
 
   return result;
-};
-
-export const getEvents = async () => {
-  NProgress.start();
-
-  //returns mock data on local host
-  if (window.location.href.startsWith("http://localhost")) {
-    NProgress.done();
-    return mockData;
-  }
-
-  //returns previously cached events when online 
-  if (!navigator.onLine) {
-    const events = localStorage.getItem("lastEvents");
-    NProgress.done();
-    return JSON.parse(events).events;
-  }
-
-  const token = await getAccessToken();
-
-  if (token) {
-    removeQuery();
-    const url = 'https://embmwddg0m.execute-api.us-east-2.amazonaws.com/dev/api/get-events' + '/' + token;
-    const result = await axios.get(url);
-    if (result.data) {
-      var locations = extractLocations(result.data.events);
-      localStorage.setItem("lastEvents", JSON.stringify(result.data));
-      localStorage.setItem("locations", JSON.stringify(locations));
-    }
-    NProgress.done();
-    return result.data.events;
-  }
 };
 
 export const getAccessToken = async () => {
