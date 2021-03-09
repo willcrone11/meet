@@ -50,11 +50,13 @@ const checkToken = async (accessToken) => {
 export const getEvents = async () => {
   NProgress.start();
 
+  //returns mock data on local host
   if (window.location.href.startsWith("http://localhost")) {
     NProgress.done();
     return mockData;
   }
 
+  //returns previously cached events when online 
   if (!navigator.onLine) {
     const events = localStorage.getItem("lastEvents");
     NProgress.done();
