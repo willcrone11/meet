@@ -48,7 +48,7 @@ class App extends Component {
   ifOnline = () => {
     if (!navigator.onLine) {
       this.setState({
-        infoText: 'You are offline- currently only showing cached events'
+        infoText: 'You are currently offline- events may not be up to date'
       })
     } else {
       return this.setState({
