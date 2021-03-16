@@ -3,6 +3,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import EventGenre from './EventGenre';
 import { getEvents, extractLocations } from './api';
 import "./nprogress.css";
 import { ErrorAlert } from './Alert';
@@ -107,19 +108,22 @@ class App extends Component {
           updateEvents={this.updateEvents}
         />
         <br></br><br/>
-        <ResponsiveContainer height={400} >
-          <ScatterChart
-            margin={{
-              top: 5, right: 5, bottom: 5, left: 0,
-            }}
-          >
-            <CartesianGrid />
-            <XAxis type="category" dataKey="city" name="city" />
-            <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
-            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter data={this.getData()} fill="#8884d8" />
-          </ScatterChart>
-          </ResponsiveContainer>
+        <div className="data-vis-wrapper">
+          <EventGenre events={this.state.events} />
+          <ResponsiveContainer height={400} >
+            <ScatterChart
+              margin={{
+                top: 5, right: 5, bottom: 5, left: 0,
+              }}
+            >
+              <CartesianGrid />
+              <XAxis type="category" dataKey="city" name="city" />
+              <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+              <Scatter data={this.getData()} fill="#8884d8" />
+            </ScatterChart>
+            </ResponsiveContainer>
+          </div>
         <br/><br/>
         <EventList events={this.state.events}/>
       </div>
