@@ -24,7 +24,7 @@ class CitySearch extends Component {
       return this.setState({
         query: value,
         suggestions,
-        infoText:''
+        infoText:'',
       });
     }
   };
@@ -34,20 +34,30 @@ class CitySearch extends Component {
       query: suggestion,
       showSuggestions: false
     });
-
+    
     this.props.updateEvents(suggestion);
+  }
+
+  removeSuggestions = (e) => {
+      this.setState({
+      showSuggestions: false
+      });
   }
 
   render() {
     return (
-      <div className="CitySearch">
+      <div 
+        className="CitySearch" 
+        onMouseOver={() => { this.setState({ showSuggestions: true }) }}
+        onMouseOut={() => { this.setState({ showSuggestions: false }) }} 
+      >
         <div className="info-alert" ><InfoAlert text={this.state.infoText} /></div>
         <input 
           type="text" 
           className="city" 
           value={this.state.query} 
-          onChange={this.handleInputChanged} 
-          onFocus={() => { this.setState({ showSuggestions: true }) }}
+          onChange={this.handleInputChanged}
+        
         />
         <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
           {this.state.suggestions.map((suggestion) => (
