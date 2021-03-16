@@ -38,12 +38,6 @@ class CitySearch extends Component {
     this.props.updateEvents(suggestion);
   }
 
-  removeSuggestions = (e) => {
-      this.setState({
-      showSuggestions: false
-      });
-  }
-
   render() {
     return (
       <div 
