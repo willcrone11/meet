@@ -20,6 +20,11 @@
 
 .recharts-responsive-container{
   background: #ffffff;
+  border: solid black 1px;
+}
+
+.chart-label {
+  margin: 20px;
 }
 
 #header {
@@ -48,7 +53,7 @@
   font-style: italic;
 }
 
-#city-label, #numevents-label {
+#city-label, #numevents-label, .chart-label {
   font-weight: bold;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

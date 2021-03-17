@@ -114,7 +114,7 @@ class App extends Component {
             events={this.state.events}
             locations={this.state.locations}
           />
-          <p className="chart-label">Frequency of Event by City:</p>
+          <p className="chart-label">Number of Events per City:</p>
           <ResponsiveContainer height={400} >
             <ScatterChart
               margin={{
