@@ -19,18 +19,17 @@ function Login() {
             />
           </div>
           <a
-          href="THE URL RETURNED FROM YOUR getAuth
-          ENDPOINT HERE"
+          href="https://accounts.google.com/o/oauth2/v2/auth/identifier?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly&response_type=code&client_id=36721240947-ga3kcvoir0t2rghlcqp83iv9gb1c831r.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fwillcrone11.github.io%2Fmeet%2F&flowName=GeneralOAuthFlow"
           rel="nofollow noopener"
           class="btn-text"
           >
-            <b>Sign in with google</b>
+            <b>Sign in with Google</b>
           </a>
         </div>
       </div>
       <a
-      href="https://glenzy.github.io/meet/privacy.html"
-      rel="nofollow noopener"
+        href="https://willcrone11.github.io/meet/devel_Up+PrivacyPolicy.html"
+        rel="nofollow noopener"
       >
       Privacy policy
       </a>
