@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
+import Login from "./Login";
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import EventGenre from './EventGenre';
-import { getEvents, extractLocations } from './api';
+import { getEvents, extractLocations, checkToken} from './api';
 import "./nprogress.css";
 import { ErrorAlert } from './Alert';
 import {
@@ -17,7 +18,8 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: '24',
-    currentLocation: "all"
+    currentLocation: "all",
+    tokenCheck: false,
   }
 
   updateEvents = (location, eventCount) => {
@@ -71,7 +73,21 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const accessToken = localStorage.getItem("access_token");
+    const validToken = accessToken !== null ? await
+
+    checkToken(accessToken) : false;
+    this.setState({ tokenCheck: validToken });
+    if(validToken === true) this.updateEvents()
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get("code");
+    this.mounted = true;
+    if (code && this.mounted === true && validToken === false) {
+      this.setState({tokenCheck: true });
+      this.updateEvents()
+    }
+    
     this.mounted = true;
     getEvents().then((events) => {
       if (this.mounted) {
@@ -86,7 +102,11 @@ class App extends Component {
   }
 
   render() {
-    return (
+    return this.state.tokenCheck === false ? (
+      <div className="App">
+      <Login />
+      </div>
+      ) : (
       <div className="App">
         <div id="header-container">
           <h1 id="header"><span id="devel">devel_</span><span id="up">Up</span><span id="plus">+</span></h1>
