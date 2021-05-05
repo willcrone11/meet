@@ -3,7 +3,7 @@ import React from "react";
 function Login() {
   return (
     <div className="App">
-      <h1>Welcome to the Meet app</h1>
+      <h1>Welcome to devel_Up+, the Web Development Meet app!</h1>
       <h4>
       Log in to see upcoming events around the world for
       full-stack
