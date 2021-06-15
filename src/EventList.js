@@ -4,6 +4,11 @@ import { getEvents, extractLocations } from './api';
 
 class EventList extends Component {
 
+  state = {
+    events: [],
+    locations: [],
+  }
+
   async componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
