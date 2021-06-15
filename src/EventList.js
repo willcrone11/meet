@@ -1,19 +1,7 @@
 import React, { Component } from 'react';
 import Event from './Event';
-import { getEvents, extractLocations } from './api';
 
 class EventList extends Component {
-
-  async componentDidMount() {
-    
-    this.mounted = true;
-    getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({ events, locations: extractLocations(events) });
-      }
-    });
-    this.ifOnline();
-  }
 
   render() {
     

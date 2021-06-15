@@ -11,7 +11,7 @@ export const getEvents = async () => {
     return mockData;
   }
 
-  //returns previously cached events when online 
+  //returns previously cached events when offline 
   if (!navigator.onLine) {
     const events = localStorage.getItem("lastEvents");
     NProgress.done();

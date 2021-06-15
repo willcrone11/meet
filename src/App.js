@@ -5,7 +5,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import EventGenre from './EventGenre';
-import { getEvents, checkToken} from './api';
+import { getEvents, checkToken, extractLocations} from './api';
 import "./nprogress.css";
 import { ErrorAlert } from './Alert';
 import {
@@ -87,6 +87,14 @@ class App extends Component {
       this.setState({tokenCheck: true });
       this.updateEvents()
     }
+
+    this.mounted = true;
+    getEvents().then((events) => {
+      if (this.mounted) {
+        this.setState({ events, locations: extractLocations(events) });
+      }
+    });
+    this.ifOnline();
   }
 
   componentWillUnmount(){
